@@ -17,5 +17,5 @@
         "noEmit": true,
         "jsx": "react-jsx"
     },
-    "include": ["web-client", "server"]
+    "include": ["src"]
 }
