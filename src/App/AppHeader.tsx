@@ -5,7 +5,7 @@ export default function AppHeader() {
     return (
         <div className="navbar">
             <Link className="nav-button" to="/">
-                Home
+                <b>Dangerscape USA</b>
             </Link>
             <Link className="nav-button" to="/map">
                 Map
@@ -19,9 +19,6 @@ export default function AppHeader() {
             <Link className="nav-button" to="/about-us">
                 About Us
             </Link>
-            <div className="nav-header">
-                <h2>What&apos;s up Danger</h2>
-            </div>
         </div>
     );
 }

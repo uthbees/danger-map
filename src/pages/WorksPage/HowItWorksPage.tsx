@@ -1,6 +1,4 @@
 import './HowItWorksPage.css';
-import { Table } from '@mui/material';
-import CountiesDataTable from './CountiesDataTable';
 
 export default function HowItWorksPage() {
     return (

@@ -36,12 +36,3 @@
 .nav-button:hover {
     background-color: #4c8db8; /* Darker shade on hover */
 }
-
-/* Header styling */
-.nav-header {
-    flex-grow: 1; /* Take up remaining space in navbar */
-    text-align: center; /* Center the header horizontally */
-    font-size: 18px; /* Set font size for the header */
-    font-weight: bold; /* Make the header bold */
-    color: #333; /* Set a neutral color for the header */
-}

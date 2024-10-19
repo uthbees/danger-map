@@ -9,9 +9,9 @@ export default function AboutUsPage() {
             <main className="main-content">
                 <section className="content">
                     <p>
-                        Welcome to our What&apos;s Up Danger project page! We
-                        are Team 35 from BYU-Idaho&apos;s 2024 I-Hack Hackathon,
-                        an interdisciplinary team united by a shared passion for
+                        Welcome to our Dangerscape USA project page! We are Team
+                        35 from BYU-Idaho&apos;s 2024 I-Hack Hackathon, an
+                        interdisciplinary team united by a shared passion for
                         innovation and exploration. As college students
                         preparing for our future endeavors, we recognized the
                         importance of assessing the safety of potential
