@@ -28,7 +28,7 @@ export default function getRiskScore(
 
 function getCarCrashInjuryScore(countyData: CountyData) {
     const carCrashInjuriesPer100_000 =
-        (countyData.TOTAL_FATALS / countyData.POPULATION) * 100_000;
+        (countyData.FATALS / countyData.POPULATION) * 100_000;
 
     return Math.pow(5 * carCrashInjuriesPer100_000, 0.3125);
 }

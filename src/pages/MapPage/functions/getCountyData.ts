@@ -1,6 +1,5 @@
 import { CountyData } from '../types';
-import counties_data from '../../../counties_data.json';
-
+import counties_car_data from '../../../counties_car_data.json';
 export default function getCountyData(
     countyName: string,
     stateCode: string,
@@ -15,10 +14,10 @@ export default function getCountyData(
     const lowercaseCountyName = countyName.toLowerCase();
     const lowercaseStateName = stateName.toLowerCase();
 
-    return counties_data.find(
+    return counties_car_data.find(
         (countyData: CountyData) =>
-            countyData.COUNTY_NAME.toLowerCase() === lowercaseCountyName &&
-            countyData.STATE_NAME.toLowerCase() === lowercaseStateName,
+            countyData.COUNTYNAME.toLowerCase() === lowercaseCountyName &&
+            countyData.STATENAME.toLowerCase() === lowercaseStateName,
     );
 }
 

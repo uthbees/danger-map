@@ -1,8 +1,8 @@
 export interface CountyData {
-    COUNTY_NAME: string;
-    STATE_NAME: string;
+    COUNTYNAME: string;
+    STATENAME: string;
     POPULATION: number;
-    TOTAL_FATALS: number; // Total fatalities/serious injuries from car crashes.
+    FATALS: number; // Total fatalities/serious injuries from car crashes.
     TOTAL_INCIDENTS: number; // Total car crashes.
 }
 
