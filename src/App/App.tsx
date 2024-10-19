@@ -6,9 +6,20 @@ import HomePage from '../pages/HomePage';
 import HowItWorksPage from '../pages/WorksPage/HowItWorksPage';
 import AboutUsPage from '../pages/AboutPage/AboutUsPage';
 import LegalPage from '../pages/LegalPage/LegalPage';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    typography: {
+        fontFamily: `"Roboto Slab", "Helvetica", "Arial", sans-serif`,
+    },
+});
 
 export default function App() {
-    return <RouterProvider router={router} />;
+    return (
+        <ThemeProvider theme={theme}>
+            <RouterProvider router={router} />
+        </ThemeProvider>
+    );
 }
 
 const router = createHashRouter([
