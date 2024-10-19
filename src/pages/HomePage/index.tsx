@@ -15,8 +15,8 @@ export default function HomePage() {
                         Welcome to our danger level rating site! Using data
                         analysis, we&apos;ve created a tool to measure and rate
                         the safety of different areas across the USA. Whether
-                        you&apos;re planning a move or just curious, our site
-                        provides an easy way to explore the relative danger
+                        you&apos;re planning a move or are just curious, our
+                        site provides an easy way to explore the relative danger
                         levels of various regions. Dive in and discover more!
                     </p>
                 </div>
