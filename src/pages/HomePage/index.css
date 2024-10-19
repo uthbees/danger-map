@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto Slab', Arial, sans-serif;
     background-color: #f9f9f9;
 }
 
@@ -21,13 +23,14 @@ body {
 }
 
 .section-1 {
-    background-color: #006eb6; /* Replace with your desired image */
+    background-color: #4c8db8; /* Replace with your desired image */
     text-align: center; /* Center align text in section 1 */
     display: flex; /* Add flexbox layout */
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center items vertically */
     align-items: center; /* Center items horizontally */
     padding: 0 25%; /* Add padding on left and right to make text span only 50% */
+    min-height: 300px;
 }
 
 .section-title {
@@ -54,7 +57,7 @@ body {
 }
 
 .section-3 {
-    background-color: #006eb6; /* Replace with your desired image */
+    background-color: #4c8db8; /* Replace with your desired image */
 }
 
 /* Flex layout for section 2 and 3 */
@@ -94,15 +97,34 @@ h2 {
 
 /* Button box takes 30% of the space */
 .button {
-    flex: 0 0 30%; /* Takes up 30% of the width */
+    flex: 0 0 20%; /* Takes up 30% of the width */
     width: 100%;
     padding: 10px;
     text-align: center;
-    background-color: #007bff;
+    background-color: #4c8db8;
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    border: 2px solid black;
     font-weight: bold;
+    margin-right: 100px;
+    transition: background-color 0.3s;
+    align-self: center;
+    /*box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);*/
+}
+
+.buttons {
+    flex: 0 0 20%; /* Takes up 30% of the width */
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-weight: bold;
+    margin-right: 100px;
     transition: background-color 0.3s;
     align-self: center;
     /*box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);*/
