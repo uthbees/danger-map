@@ -4,9 +4,16 @@
     min-height: 60px;
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between buttons and header */
     border-bottom: 1px solid black;
     background-color: white;
     z-index: 10;
+    padding: 0 20px; /* Add padding to the navbar for spacing */
+}
+
+.nav-buttons {
+    display: flex; /* Align buttons in a row */
+    align-items: center;
 }
 
 .nav-button {
@@ -22,11 +29,19 @@
     font-size: 16px; /* Set a base font size for better legibility */
 }
 
-/* Last button adjustment to remove right margin */
 .nav-button:last-child {
     margin-right: 0; /* No margin for the last button */
 }
 
 .nav-button:hover {
     background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Header styling */
+.nav-header {
+    flex-grow: 1; /* Take up remaining space in navbar */
+    text-align: center; /* Center the header horizontally */
+    font-size: 18px; /* Set font size for the header */
+    font-weight: bold; /* Make the header bold */
+    color: #333; /* Set a neutral color for the header */
 }

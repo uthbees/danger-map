@@ -20,7 +20,6 @@ body {
     border-radius: 0; /* No rounded corners */
 }
 
-/* Background images for each section */
 .section-1 {
     background-image: url('images/cheese.jpg'); /* Replace with your desired image */
     text-align: center; /* Center align text in section 1 */
@@ -31,13 +30,23 @@ body {
     padding: 0 25%; /* Add padding on left and right to make text span only 50% */
 }
 
+.section-title {
+    text-align: center; /* Center align the title */
+    color: #fff; /* Change the color to white for visibility */
+    font-size: 2rem; /* Increase font size */
+    margin-top: 35px; /* Add some space below the title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
 .text-box {
     width: 100%; /* Ensure text-box takes full width of the padded area */
     text-align: center;
-    font-size: 16px;
+    font-size: 1.2rem; /* Adjust font size to make it look like a subheading */
+    font-weight: 600; /* Make the text slightly bolder */
     color: #fff;
     margin: 10px 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+    letter-spacing: 1px; /* Add letter spacing for better readability */
 }
 
 .section-2 {

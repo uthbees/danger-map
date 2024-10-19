@@ -19,6 +19,9 @@ export default function AppHeader() {
             <Link className="nav-button" to="/about-us">
                 About Us
             </Link>
+            <div className="nav-header">
+                <h2>What&apos;s up Danger</h2>
+            </div>
         </div>
     );
 }

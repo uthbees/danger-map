@@ -6,37 +6,29 @@ export default function HomePage() {
         <div>
             {/* Section 1 */}
             <section className="container section-1">
-                <header>
-                    <h1>What&apos;s up Danger</h1> {/* Box 2 */}
-                </header>
+                <h1 className="section-title">
+                    Looking for a date with danger?
+                </h1>{' '}
+                {/* Title Header */}
                 <div className="text-box">
-                    {' '}
-                    {/* Box 3 */}
                     <p>
                         Welcome to our danger level rating site! Using data
                         analysis, we&apos;ve created a tool to measure and rate
                         the safety of different areas across the USA. Whether
                         you&apos;re planning a move or just curious, our site
                         provides an easy way to explore the relative danger
-                        levels of various regions. <br></br> . . . . . . . . . .
-                        . . . . . . . . . . . . . . . . . . Dive in and discover
-                        more! . . . . . . . . . . . . . . . . . . . . . . . . .
-                        . .
+                        levels of various regions. Dive in and discover more!
                     </p>
                 </div>
             </section>
-            <div className="divider"></div> {/* Divider 12 */}
+            <div className="divider"></div>
+
             {/* Section 2 */}
             <section className="container flex-row reverse section-2">
-                {' '}
-                {/* Button on the left for this section */}
                 <Link to="map" className="button">
                     Go to Interactive Map
-                </Link>{' '}
-                {/* Box 7 */}
+                </Link>
                 <div className="text-side">
-                    {' '}
-                    {/* Box 5, 6 */}
                     <h2>Interactive Map</h2>
                     <div className="texts-box">
                         <p>
@@ -48,14 +40,11 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-            <div className="divider"></div> {/* Divider 13 */}
+            <div className="divider"></div>
+
             {/* Section 3 */}
             <section className="container flex-row section-3">
-                {' '}
-                {/* Button on the right */}
                 <div className="text-side">
-                    {' '}
-                    {/* Box 8, 9 */}
                     <h2>How it Works</h2>
                     <div className="texts-box">
                         <p>
@@ -67,10 +56,9 @@ export default function HomePage() {
                 </div>
                 <Link to="/how-it-works" className="button">
                     How it Works
-                </Link>{' '}
-                {/* Box 10 */}
+                </Link>
             </section>
-            <div className="divider"></div> {/* Divider 14 */}
+            <div className="divider"></div>
         </div>
     );
 }
