@@ -41,13 +41,15 @@ export default function MapPage() {
             },
         }).addTo(map);
 
-        // Create and add the legend
+        // Legend code goes here
         const legend = (L.control as any)({ position: 'bottomright' });
 
         legend.onAdd = function (map: any) {
             const div = L.DomUtil.create('div', 'info legend'),
-                grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], // Grades from 1 to 10
+                grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
                 labels = [];
+
+            // Loop through the grades and generate a label with a colored square
 
             // Loop through the grades and generate a label with a colored square
             for (let i = 0; i < grades.length; i++) {
@@ -56,7 +58,7 @@ export default function MapPage() {
                     getColor(grades[i]) +
                     '"></i> ' +
                     grades[i] +
-                    '<br>'; // Single number for each color
+                    '<br>';
             }
 
             return div;
