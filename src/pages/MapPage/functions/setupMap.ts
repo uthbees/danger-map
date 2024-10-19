@@ -1,6 +1,7 @@
 import L from 'leaflet';
 import { GeoJsonObject } from 'geojson';
 import counties from '../counties.json';
+import states from '../us-states.json';
 import getCountyData from './getCountyData';
 import getRiskScore from './getRiskScore';
 
@@ -42,6 +43,15 @@ export default function setupMap() {
                     `${feature.properties.NAME} county<br/>${feature.properties.GEOID}`,
                 );
             }
+        },
+    }).addTo(map);
+
+    // Add a GeoJSON layer for state boundaries with a black outline
+    L.geoJSON(states as unknown as GeoJsonObject, {
+        style: {
+            color: 'black', // Black outline
+            weight: 2, // Thickness of the line
+            fillOpacity: 0, // No fill, just the outline
         },
     }).addTo(map);
 
