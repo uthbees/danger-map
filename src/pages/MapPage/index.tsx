@@ -17,14 +17,14 @@ export default function MapPage() {
         carCrashFrequency: true,
         carCrashFatalities: true,
     });
-    const mapObj = useRef<L.Map>(null);
+    const map = useRef<L.Map | null>(null);
 
     useInitialSetup(() => {
-        // mapObj.current = L.map('map').setView([37.8, -96], 4);
+        map.current = L.map('map').setView([37.8, -96], 4);
     });
 
     useEffect(() => {
-        setupMap(riskFactors);
+        setupMap(map, riskFactors);
     }, [riskFactors]);
 
     return (

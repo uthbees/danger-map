@@ -6,9 +6,15 @@ import getCountyData from './getCountyData';
 import getRiskScore from './getRiskScore';
 import { RiskFactorEnabledStatuses } from '../types';
 
-export default function setupMap(riskFactors: RiskFactorEnabledStatuses) {
-    // Initialize the map centered on the USA
-    const map = L.map('map').setView([37.8, -96], 4);
+export default function setupMap(
+    map: L.Map | null,
+    riskFactors: RiskFactorEnabledStatuses,
+) {
+    if (map === null) {
+        const message = 'Map not initialized!';
+        alert(message);
+        throw new Error(message);
+    }
 
     // Add a base layer (OpenStreetMap)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -29,6 +35,7 @@ export default function setupMap(riskFactors: RiskFactorEnabledStatuses) {
                             feature.properties.NAME,
                             feature.properties.STATEFP,
                         ),
+                        riskFactors,
                     ),
                 ),
                 weight: 1,
