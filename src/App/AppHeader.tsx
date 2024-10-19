@@ -13,8 +13,8 @@ export default function AppHeader() {
         >
             <Link to="/">Home</Link>
             <Link to="/map">Map</Link>
-            <Link to="/hiwp">How it Works</Link>
-            <Link to="/aboutus">About Us</Link>
+            <Link to="/how-it-works">How it Works</Link>
+            <Link to="/about-us">About Us</Link>
             <Link to="/legal">Legal Disclaimer</Link>
         </div>
     );
