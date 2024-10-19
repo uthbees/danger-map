@@ -12,12 +12,18 @@ export default function getRiskScore(
     let enabledRiskScoresSum = 0;
 
     if (riskFactors.carCrashFatalities) {
-        enabledRiskFactors++;
-        enabledRiskScoresSum += getCarCrashInjuryScore(countyData);
+        const score = getCarCrashInjuryScore(countyData);
+        if (score !== undefined) {
+            enabledRiskFactors++;
+            enabledRiskScoresSum += score;
+        }
     }
     if (riskFactors.carCrashFrequency) {
-        enabledRiskFactors++;
-        enabledRiskScoresSum += getCarCrashFrequencyScore(countyData);
+        const score = getCarCrashFrequencyScore(countyData);
+        if (score !== undefined) {
+            enabledRiskFactors++;
+            enabledRiskScoresSum += score;
+        }
     }
 
     if (enabledRiskFactors === 0) {
@@ -27,6 +33,10 @@ export default function getRiskScore(
 }
 
 function getCarCrashInjuryScore(countyData: CountyData) {
+    if (countyData.FATALS === undefined) {
+        return undefined;
+    }
+
     const carCrashInjuriesPer100_000 =
         (countyData.FATALS / countyData.POPULATION) * 100_000;
 
@@ -34,6 +44,10 @@ function getCarCrashInjuryScore(countyData: CountyData) {
 }
 
 function getCarCrashFrequencyScore(countyData: CountyData) {
+    if (countyData.TOTAL_INCIDENTS === undefined) {
+        return undefined;
+    }
+
     const carCrashesPer100_000 =
         (countyData.TOTAL_INCIDENTS / countyData.POPULATION) * 100_000;
 

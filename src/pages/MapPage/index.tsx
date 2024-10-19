@@ -51,22 +51,53 @@ export default function MapPage() {
         statesLayer.current.addTo(map.current);
     }, [riskFactors]);
 
+    const allCarCrashRisksEnabled =
+        riskFactors.carCrashFrequency && riskFactors.carCrashFatalities;
+
     return (
         <Stack direction="row" style={{ height: '100%' }}>
             <Paper
                 style={{
                     height: '100%',
-                    minWidth: '250px',
+                    minWidth: '300px',
                     backgroundColor: 'white',
                     padding: '16px',
                 }}
                 elevation={6}
                 square
             >
-                Enabled risk factors
+                <b>Enabled risk factors</b>
                 <br />
                 <br />
                 <FormGroup>
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={allCarCrashRisksEnabled}
+                                indeterminate={
+                                    !allCarCrashRisksEnabled &&
+                                    (riskFactors.carCrashFrequency ||
+                                        riskFactors.carCrashFatalities)
+                                }
+                                onChange={() => {
+                                    if (allCarCrashRisksEnabled) {
+                                        setRiskFactors((prevState) => ({
+                                            ...prevState,
+                                            carCrashFrequency: false,
+                                            carCrashFatalities: false,
+                                        }));
+                                    } else {
+                                        setRiskFactors((prevState) => ({
+                                            ...prevState,
+                                            carCrashFrequency: true,
+                                            carCrashFatalities: true,
+                                        }));
+                                    }
+                                }}
+                            />
+                        }
+                        label="Car crashes"
+                    />
                     <FormControlLabel
                         control={
                             <Checkbox
@@ -80,6 +111,7 @@ export default function MapPage() {
                             />
                         }
                         label="Car crash frequency"
+                        className="indented"
                     />
                     <FormControlLabel
                         control={
@@ -94,6 +126,7 @@ export default function MapPage() {
                             />
                         }
                         label="Injuries/fatalities from car crashes"
+                        className="indented"
                     />
                 </FormGroup>
             </Paper>
