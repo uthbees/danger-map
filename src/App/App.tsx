@@ -4,7 +4,7 @@ import AppFrame from './AppFrame';
 import MapPage from '../pages/MapPage';
 import HomePage from '../pages/HomePage';
 import HowItWorksPage from '../pages/WorksPage/HowItWorksPage';
-import AboutUsPage from '../pages/AboutUsPage';
+import AboutUsPage from '../pages/AboutPage/AboutUsPage';
 import LegalPage from '../pages/LegalPage/LegalPage';
 
 export default function App() {
