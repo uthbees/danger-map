@@ -17,6 +17,14 @@ export default function MapPage() {
     const [riskFactors, setRiskFactors] = useState<RiskFactorEnabledStatuses>({
         carCrashFrequency: true,
         carCrashFatalities: true,
+        robberies: true,
+        larcenies: true,
+        burglaries: true,
+        motorVehicleThefts: true,
+        assaults: true,
+        arson: true,
+        rape: true,
+        murder: true,
     });
     const map = useRef<L.Map | null>(null);
     const countiesLayer = useRef<L.Layer | null>(null);
@@ -53,6 +61,15 @@ export default function MapPage() {
 
     const allCarCrashRisksEnabled =
         riskFactors.carCrashFrequency && riskFactors.carCrashFatalities;
+    const allCrimeRisksEnabled =
+        riskFactors.robberies &&
+        riskFactors.larcenies &&
+        riskFactors.burglaries &&
+        riskFactors.motorVehicleThefts &&
+        riskFactors.assaults &&
+        riskFactors.arson &&
+        riskFactors.rape &&
+        riskFactors.murder;
 
     return (
         <Stack direction="row" style={{ height: '100%' }}>
@@ -70,6 +87,172 @@ export default function MapPage() {
                 <br />
                 <br />
                 <FormGroup>
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={allCrimeRisksEnabled}
+                                indeterminate={
+                                    !allCrimeRisksEnabled &&
+                                    (riskFactors.robberies ||
+                                        riskFactors.larcenies ||
+                                        riskFactors.burglaries ||
+                                        riskFactors.motorVehicleThefts ||
+                                        riskFactors.assaults ||
+                                        riskFactors.arson ||
+                                        riskFactors.rape ||
+                                        riskFactors.murder)
+                                }
+                                onChange={() => {
+                                    if (allCrimeRisksEnabled) {
+                                        setRiskFactors((prevState) => ({
+                                            ...prevState,
+                                            robberies: false,
+                                            larcenies: false,
+                                            burglaries: false,
+                                            motorVehicleThefts: false,
+                                            assaults: false,
+                                            arson: false,
+                                            rape: false,
+                                            murder: false,
+                                        }));
+                                    } else {
+                                        setRiskFactors((prevState) => ({
+                                            ...prevState,
+                                            robberies: true,
+                                            larcenies: true,
+                                            burglaries: true,
+                                            motorVehicleThefts: true,
+                                            assaults: true,
+                                            arson: true,
+                                            rape: true,
+                                            murder: true,
+                                        }));
+                                    }
+                                }}
+                            />
+                        }
+                        label="Violent crime"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.robberies}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        robberies: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Robberies"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.larcenies}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        larcenies: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Larcenies"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.burglaries}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        burglaries: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Burglaries"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.motorVehicleThefts}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        motorVehicleThefts: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Motor vehicle thefts"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.assaults}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        assaults: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Assaults"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.arson}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        arson: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Arson"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.rape}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        rape: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Rapes"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.murder}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        murder: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Murders"
+                        className="indented"
+                    />
                     <FormControlLabel
                         control={
                             <Checkbox

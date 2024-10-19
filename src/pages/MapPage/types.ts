@@ -9,4 +9,12 @@ export interface CountyData {
 export interface RiskFactorEnabledStatuses {
     carCrashFrequency: boolean;
     carCrashFatalities: boolean;
+    robberies: boolean;
+    larcenies: boolean;
+    burglaries: boolean;
+    motorVehicleThefts: boolean;
+    assaults: boolean;
+    arson: boolean;
+    rape: boolean;
+    murder: boolean;
 }
