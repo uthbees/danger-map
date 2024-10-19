@@ -34,8 +34,28 @@ export default function buildCountiesLayer(
         onEachFeature: (feature, layer) => {
             // Attach a popup with county information
             if (feature.properties && feature.properties.NAME) {
+                const countyData = getCountyData(
+                    feature.properties.NAME,
+                    feature.properties.STATEFP,
+                );
+
+                const riskScore = getRiskScore(countyData, riskFactors);
+
+                if (countyData === undefined || riskScore === undefined) {
+                    layer.bindPopup(
+                        `${feature.properties.NAME} County<br/>No data available.`,
+                    );
+                    return;
+                }
+
                 layer.bindPopup(
-                    `${feature.properties.NAME} County<br/>${feature.properties.GEOID}`,
+                    `${feature.properties.NAME} County<br/>Population: ${countyData.population.toLocaleString()}<br/>Risk score: ${riskScore?.toLocaleString(
+                        undefined,
+                        {
+                            minimumFractionDigits: 1,
+                            maximumFractionDigits: 1,
+                        },
+                    )}`,
                 );
             }
         },
