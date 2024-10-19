@@ -1,6 +1,15 @@
-import { CountyCarData, CountyCrimeData, CountyData } from '../types';
+import {
+    CountyCarData,
+    CountyCrimeData,
+    CountyData,
+    CountyEarthquakeData,
+    CountyFireData,
+} from '../types';
 import counties_car_data from '../../../counties_car_data.json';
 import counties_crime_data from '../../../counties_crime_data.json';
+import counties_earthquakes_data from '../../../counties_earthquakes_data.json';
+import counties_fire_data from '../../../counties_fire_data.json';
+
 export default function getCountyData(
     countyName: string,
     stateCode: string,
@@ -32,6 +41,23 @@ export default function getCountyData(
                 countyData.state_name.toLowerCase() === lowercaseStateName,
         );
 
+    let earthquakesMagnitudesSum = 0;
+
+    counties_earthquakes_data.forEach((countyData: CountyEarthquakeData) => {
+        if (
+            countyData.county_name.toLowerCase() === lowercaseCountyName &&
+            countyData.state_name.toLowerCase() === lowercaseStateName
+        ) {
+            earthquakesMagnitudesSum += countyData.mag;
+        }
+    });
+
+    const countyFireData: CountyFireData | undefined = counties_fire_data.find(
+        (countyData: CountyFireData) =>
+            countyData.county_name.toLowerCase() === lowercaseCountyName &&
+            countyData.state_name.toLowerCase() === lowercaseStateName,
+    );
+
     return {
         countyName,
         stateName,
@@ -46,6 +72,8 @@ export default function getCountyData(
         arson: countyCrimeData?.arson,
         rapes: countyCrimeData?.rape,
         murders: countyCrimeData?.murder,
+        earthquakesMagnitudesSum,
+        nationalFireRiskScore: countyFireData?.national_risk_score,
     };
 }
 

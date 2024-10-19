@@ -21,6 +21,14 @@ export default function getRiskScore(
         enabledRiskFactors += 1.5;
         enabledRiskScoresSum += crimeSubtotal;
     }
+    const naturalDisastersSubtotal = getNaturalDisasterSubtotal(
+        countyData,
+        riskFactors,
+    );
+    if (naturalDisastersSubtotal !== undefined) {
+        enabledRiskFactors += 1;
+        enabledRiskScoresSum += naturalDisastersSubtotal;
+    }
 
     if (enabledRiskFactors === 0) {
         return undefined;
@@ -235,4 +243,48 @@ function getCarCrashFrequencyScore(countyData: CountyData) {
         (countyData.carCrashes / countyData.population) * 100_000;
 
     return Math.pow(5.3 * carCrashesPer100_000, 0.334);
+}
+
+function getNaturalDisasterSubtotal(
+    countyData: CountyData,
+    riskFactors: RiskFactorEnabledStatuses,
+) {
+    let enabledRiskFactors = 0;
+    let enabledRiskScoresSum = 0;
+
+    if (riskFactors.wildfires) {
+        const score = getWildfiresScore(countyData);
+        if (score !== undefined) {
+            enabledRiskFactors += 1.15;
+            enabledRiskScoresSum += score;
+        }
+    }
+    if (riskFactors.earthquakes) {
+        const score = getEarthquakesScore(countyData);
+        if (score !== undefined) {
+            enabledRiskFactors += 1;
+            enabledRiskScoresSum += score;
+        }
+    }
+
+    if (enabledRiskFactors === 0) {
+        return undefined;
+    }
+    return enabledRiskScoresSum / enabledRiskFactors;
+}
+
+function getWildfiresScore(countyData: CountyData) {
+    if (countyData.nationalFireRiskScore === undefined) {
+        return undefined;
+    }
+
+    return countyData.nationalFireRiskScore * 10;
+}
+
+function getEarthquakesScore(countyData: CountyData) {
+    if (countyData.earthquakesMagnitudesSum === undefined) {
+        return undefined;
+    }
+
+    return Math.pow(5.3 * countyData.earthquakesMagnitudesSum, 0.334);
 }

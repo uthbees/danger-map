@@ -12,6 +12,8 @@ export interface CountyData {
     arson?: number;
     rapes?: number;
     murders?: number;
+    earthquakesMagnitudesSum?: number;
+    nationalFireRiskScore?: number;
 }
 
 export interface CountyCarData {
@@ -35,6 +37,18 @@ export interface CountyCrimeData {
     murder: number;
 }
 
+export interface CountyEarthquakeData {
+    county_name: string;
+    state_name: string;
+    mag: number;
+}
+
+export interface CountyFireData {
+    county_name: string;
+    state_name: string;
+    national_risk_score?: number;
+}
+
 export interface RiskFactorEnabledStatuses {
     carCrashFrequency: boolean;
     carCrashFatalities: boolean;
@@ -46,4 +60,6 @@ export interface RiskFactorEnabledStatuses {
     arson: boolean;
     rape: boolean;
     murder: boolean;
+    wildfires: boolean;
+    earthquakes: boolean;
 }

@@ -25,6 +25,8 @@ export default function MapPage() {
         arson: true,
         rape: true,
         murder: true,
+        wildfires: true,
+        earthquakes: true,
     });
     const map = useRef<L.Map | null>(null);
     const countiesLayer = useRef<L.Layer | null>(null);
@@ -70,15 +72,18 @@ export default function MapPage() {
         riskFactors.arson &&
         riskFactors.rape &&
         riskFactors.murder;
+    const allNaturalDisastersEnabled =
+        riskFactors.wildfires && riskFactors.earthquakes;
 
     return (
-        <Stack direction="row" style={{ height: '100%' }}>
+        <Stack direction="row" style={{ overflow: 'auto' }}>
             <Paper
                 style={{
                     height: '100%',
                     minWidth: '300px',
                     backgroundColor: 'white',
                     padding: '16px',
+                    overflow: 'scroll',
                 }}
                 elevation={6}
                 square
@@ -309,6 +314,64 @@ export default function MapPage() {
                             />
                         }
                         label="Injuries/fatalities from car crashes"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={allNaturalDisastersEnabled}
+                                indeterminate={
+                                    !allNaturalDisastersEnabled &&
+                                    (riskFactors.wildfires ||
+                                        riskFactors.earthquakes)
+                                }
+                                onChange={() => {
+                                    if (allNaturalDisastersEnabled) {
+                                        setRiskFactors((prevState) => ({
+                                            ...prevState,
+                                            wildfires: false,
+                                            earthquakes: false,
+                                        }));
+                                    } else {
+                                        setRiskFactors((prevState) => ({
+                                            ...prevState,
+                                            wildfires: true,
+                                            earthquakes: true,
+                                        }));
+                                    }
+                                }}
+                            />
+                        }
+                        label="Natural disasters"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.wildfires}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        wildfires: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Wildfires"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.earthquakes}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        earthquakes: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Earthquakes"
                         className="indented"
                     />
                 </FormGroup>
