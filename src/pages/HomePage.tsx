@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './HomePage.css'; // Ensure this file is correctly linked to the component
 
 export default function HomePage() {
@@ -6,7 +7,7 @@ export default function HomePage() {
             {/* Section 1 */}
             <section className="container section-1">
                 <header>
-                    <h1>Header</h1> {/* Box 2 */}
+                    <h1>What&apos;s up Danger</h1> {/* Box 2 */}
                 </header>
                 <div className="text-box">
                     {' '}
@@ -22,9 +23,9 @@ export default function HomePage() {
             <section className="container flex-row reverse section-2">
                 {' '}
                 {/* Button on the left for this section */}
-                <a href="index.tsx" className="button">
-                    Button Text (clickable)
-                </a>{' '}
+                <Link to="map" className="button">
+                    Go to Interactive Map
+                </Link>{' '}
                 {/* Box 7 */}
                 <div className="text-side">
                     {' '}
@@ -48,9 +49,9 @@ export default function HomePage() {
                         <p>Cheese breakdown description goes here.</p>
                     </div>
                 </div>
-                <a href="scorebd.tsx" className="button">
-                    Button Text (clickable)
-                </a>{' '}
+                <Link to="/hiwp" className="button">
+                    How it Works
+                </Link>{' '}
                 {/* Box 10 */}
             </section>
             <div className="divider"></div> {/* Divider 14 */}

@@ -3,6 +3,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import AppFrame from './AppFrame';
 import MapPage from '../pages/MapPage';
 import HomePage from '../pages/HomePage';
+import HowItWorksPage from '../pages/WorksPage/HowItWorksPage';
 
 export default function App() {
     return <RouterProvider router={router} />;
@@ -20,6 +21,10 @@ const router = createHashRouter([
             {
                 path: 'map',
                 element: <MapPage />,
+            },
+            {
+                path: '/hiwp',
+                element: <HowItWorksPage />,
             },
         ],
     },
