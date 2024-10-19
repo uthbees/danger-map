@@ -54,7 +54,7 @@ export default function HomePage() {
                         </p>
                     </div>
                 </div>
-                <Link to="/how-it-works" className="button">
+                <Link to="/how-it-works" className="buttons">
                     How it Works
                 </Link>
             </section>
