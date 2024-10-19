@@ -20,8 +20,8 @@
     margin-left: 25px;
     margin-right: 15px; /* Add right margin for spacing between buttons */
     padding: 10px 20px; /* Add padding to the buttons */
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white; /* Button text color */
+    background-color: white; /* Bootstrap primary color */
+    color: black; /* Button text color */
     text-decoration: none; /* Remove underline from links */
     border: none; /* No border */
     border-radius: 5px; /* Rounded corners */
