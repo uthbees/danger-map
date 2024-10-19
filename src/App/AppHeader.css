@@ -1,0 +1,24 @@
+.navbar {
+    width: 100%;
+    height: 60px; /* Increased height for a more prominent appearance */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-around; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+    border-bottom: 1px solid black;
+    background-color: white;
+    z-index: 10;
+}
+
+.nav-button {
+    padding: 10px 20px; /* Add padding to the buttons */
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* Button text color */
+    text-decoration: none; /* Remove underline from links */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.nav-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
