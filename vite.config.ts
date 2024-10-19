@@ -10,7 +10,7 @@ export default defineConfig({
         strictPort: true,
     },
     build: {
-        outDir: 'clientBuild',
+        outDir: 'build',
         emptyOutDir: true,
     },
     plugins: [react()],
