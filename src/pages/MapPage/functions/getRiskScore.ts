@@ -37,6 +37,5 @@ function getCarCrashFrequencyScore(countyData: CountyData) {
     const carCrashesPer100_000 =
         (countyData.TOTAL_INCIDENTS / countyData.POPULATION) * 100_000;
 
-    // TODO
-    return Math.random() * 10;
+    return Math.pow(5.3 * carCrashesPer100_000, 0.334);
 }
