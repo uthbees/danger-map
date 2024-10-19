@@ -30,8 +30,13 @@ export default function MapPage() {
     });
 
     useEffect(() => {
-        if (map === null) {
+        if (map.current === null) {
             const message = 'Map not initialized!';
+            alert(message);
+            throw new Error(message);
+        }
+        if (statesLayer.current === null) {
+            const message = 'States layer not initialized!';
             alert(message);
             throw new Error(message);
         }
