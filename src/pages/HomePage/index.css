@@ -71,6 +71,10 @@ h2 {
     /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
 }
 
+.page-header {
+    color: white;
+}
+
 .text-side {
     flex: 0 0 70%; /* Takes up 70% of the width */
     padding-left: 60px; /* Adds spacing for Section 2 text on the right */

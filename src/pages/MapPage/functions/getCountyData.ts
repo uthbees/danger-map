@@ -50,7 +50,7 @@ export default function getCountyData(
 }
 
 // https://www.bls.gov/respondents/mwr/electronic-data-interchange/appendix-d-usps-state-abbreviations-and-fips-codes.htm
-const fipsStateLookup: Record<string, string> = {
+export const fipsStateLookup: Record<string, string> = {
     '01': 'Alabama',
     '02': 'Alaska',
     '04': 'Arizona',

@@ -4,7 +4,7 @@ export default function LegalPage() {
     return (
         <div className="page-container">
             <header className="header">
-                <h1>Legal Disclaimer</h1>
+                <h1 className="page-header">Legal Disclaimer</h1>
             </header>
             <main className="main-content">
                 <section className="content">

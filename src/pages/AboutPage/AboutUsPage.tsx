@@ -4,7 +4,7 @@ export default function AboutUsPage() {
     return (
         <div className="page-container">
             <header className="header">
-                <h1>About Us</h1>
+                <h1 className="page-header">About Us</h1>
             </header>
             <main className="main-content">
                 <section className="content">

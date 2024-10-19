@@ -16,6 +16,7 @@ export default function initializeMap() {
     legend.onAdd = function () {
         const div = L.DomUtil.create('div', 'info legend');
         const grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, '10+'];
 
         div.innerHTML += 'Risk score<br/>';
 
@@ -25,7 +26,7 @@ export default function initializeMap() {
                 '<i style="background:' +
                 getRiskScoreColor(grades[i]) +
                 '"></i> ' +
-                grades[i] +
+                labels[i] +
                 '<br>';
         }
 
