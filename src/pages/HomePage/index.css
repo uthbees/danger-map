@@ -21,7 +21,7 @@ body {
 }
 
 .section-1 {
-    background-color: #006eb6; /* Replace with your desired image */
+    background-color: #4c8db8; /* Replace with your desired image */
     text-align: center; /* Center align text in section 1 */
     display: flex; /* Add flexbox layout */
     flex-direction: column; /* Stack items vertically */
@@ -54,7 +54,7 @@ body {
 }
 
 .section-3 {
-    background-color: #006eb6; /* Replace with your desired image */
+    background-color: #4c8db8; /* Replace with your desired image */
 }
 
 /* Flex layout for section 2 and 3 */
