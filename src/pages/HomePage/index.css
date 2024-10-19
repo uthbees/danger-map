@@ -21,7 +21,7 @@ body {
 }
 
 .section-1 {
-    background-image: url('images/cheese.jpg'); /* Replace with your desired image */
+    background-color: #006eb6; /* Replace with your desired image */
     text-align: center; /* Center align text in section 1 */
     display: flex; /* Add flexbox layout */
     flex-direction: column; /* Stack items vertically */
@@ -32,10 +32,10 @@ body {
 
 .section-title {
     text-align: center; /* Center align the title */
-    color: #fff; /* Change the color to white for visibility */
+    color: black; /* Change the color to white for visibility */
     font-size: 2rem; /* Increase font size */
     margin-top: 35px; /* Add some space below the title */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
 }
 
 .text-box {
@@ -43,19 +43,19 @@ body {
     text-align: center;
     font-size: 1.2rem; /* Adjust font size to make it look like a subheading */
     font-weight: 600; /* Make the text slightly bolder */
-    color: #fff;
+    color: black;
     margin: 10px 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
     letter-spacing: 1px; /* Add letter spacing for better readability */
 }
 
 .section-2 {
-    background-image: url('images/cheese.jpg'); /* Replace with your desired image */
+    background-color: white; /* Replace with your desired image */
     flex-direction: row-reverse; /* Swaps the text and button for Section 2 */
 }
 
 .section-3 {
-    background-image: url('images/cheese.jpg'); /* Replace with your desired image */
+    background-color: #006eb6; /* Replace with your desired image */
 }
 
 /* Flex layout for section 2 and 3 */
@@ -67,9 +67,9 @@ body {
 
 h1,
 h2 {
-    color: #fff;
+    color: black;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+    /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
 }
 
 .text-side {
@@ -84,9 +84,9 @@ h2 {
     text-align: left; /* Align text to the left for all sections except section 1 */
     font-size: 16px;
     padding-right: 200px;
-    color: #fff;
+    color: black;
     margin: 10px 0;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+    /*text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 }
 
 /* Button box takes 30% of the space */
@@ -102,7 +102,7 @@ h2 {
     font-weight: bold;
     transition: background-color 0.3s;
     align-self: center;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    /*box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);*/
 }
 
 .button:hover {
