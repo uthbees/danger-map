@@ -4,8 +4,9 @@ import counties from '../counties.json';
 import states from '../us-states.json';
 import getCountyData from './getCountyData';
 import getRiskScore from './getRiskScore';
+import { RiskFactorEnabledStatuses } from '../types';
 
-export default function setupMap() {
+export default function setupMap(riskFactors: RiskFactorEnabledStatuses) {
     // Initialize the map centered on the USA
     const map = L.map('map').setView([37.8, -96], 4);
 
