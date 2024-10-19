@@ -1,6 +1,7 @@
 import './map.css';
 import { Paper, Stack } from '@mui/material';
 import counties from './counties.json';
+import states from './us-states.json'; // Import state boundaries GeoJSON file
 import useInitialSetup from '../../utils/useInitialSetup';
 import L from 'leaflet';
 import { GeoJsonObject } from 'geojson';
@@ -9,18 +10,17 @@ export default function MapPage() {
     useInitialSetup(() => {
         // Initialize the map centered on the USA
         const map = L.map('map').setView([37.8, -96], 4);
-        console.log(map);
 
         // Add a base layer (OpenStreetMap)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
         }).addTo(map);
 
-        // Create a GeoJSON layer and add it to the map
+        // Add a GeoJSON layer for counties with colored regions
         L.geoJSON(counties as unknown as GeoJsonObject[], {
             style: function (feature) {
                 return {
-                    fillColor: getColor(feature?.properties?.score), // Use the score property
+                    fillColor: getColor(feature?.properties?.score),
                     weight: 2,
                     opacity: 1,
                     color: 'white',
@@ -41,6 +41,15 @@ export default function MapPage() {
             },
         }).addTo(map);
 
+        // Add a GeoJSON layer for state boundaries with a black outline
+        L.geoJSON(states as unknown as GeoJsonObject, {
+            style: {
+                color: 'black', // Black outline
+                weight: 2, // Thickness of the line
+                fillOpacity: 0, // No fill, just the outline
+            },
+        }).addTo(map);
+
         // Legend code goes here
         const legend = (L.control as any)({ position: 'bottomright' });
 
@@ -48,8 +57,6 @@ export default function MapPage() {
             const div = L.DomUtil.create('div', 'info legend'),
                 grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
                 labels = [];
-
-            // Loop through the grades and generate a label with a colored square
 
             // Loop through the grades and generate a label with a colored square
             for (let i = 0; i < grades.length; i++) {
