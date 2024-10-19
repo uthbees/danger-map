@@ -32,6 +32,7 @@ export default tseslint.config({
         '@typescript-eslint/no-unsafe-assignment': 0,
         '@typescript-eslint/no-unsafe-member-access': 0,
         '@typescript-eslint/no-unsafe-argument': 0,
+        '@typescript-eslint/no-unsafe-return': 0,
     },
     languageOptions: {
         ecmaVersion: 2020,
