@@ -1,11 +1,9 @@
 import L from 'leaflet';
 import { GeoJsonObject } from 'geojson';
 import states from '../us-states.json';
-import { RiskFactorEnabledStatuses } from '../types';
-import buildCountiesLayer from './buildCountiesLayer';
 import getRiskScoreColor from './getRiskScoreColor';
 
-export default function initializeMap(riskFactors: RiskFactorEnabledStatuses) {
+export default function initializeMap() {
     const map = L.map('map').setView([37.8, -96], 4);
 
     // Add a base layer (OpenStreetMap)
@@ -43,6 +41,7 @@ export default function initializeMap(riskFactors: RiskFactorEnabledStatuses) {
             weight: 2, // Thickness of the line
             fillOpacity: 0, // No fill, just the outline
         },
+        interactive: false,
     });
 
     return { map, statesLayer };

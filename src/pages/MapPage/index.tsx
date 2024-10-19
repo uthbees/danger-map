@@ -24,7 +24,7 @@ export default function MapPage() {
 
     useInitialSetup(() => {
         const { map: localMap, statesLayer: localStatesLayer } =
-            initializeMap(riskFactors);
+            initializeMap();
         map.current = localMap;
         statesLayer.current = localStatesLayer;
     });
