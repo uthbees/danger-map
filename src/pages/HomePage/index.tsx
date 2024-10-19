@@ -21,7 +21,7 @@ export default function HomePage() {
                         levels of various regions. <br></br> . . . . . . . . . .
                         . . . . . . . . . . . . . . . . . . Dive in and discover
                         more! . . . . . . . . . . . . . . . . . . . . . . . . .
-                        . . .
+                        . .
                     </p>
                 </div>
             </section>
