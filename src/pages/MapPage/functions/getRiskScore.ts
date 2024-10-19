@@ -8,13 +8,20 @@ export default function getRiskScore(
         return undefined;
     }
 
+    return getCarCrashesSubtotal(countyData, riskFactors);
+}
+
+function getCarCrashesSubtotal(
+    countyData: CountyData,
+    riskFactors: RiskFactorEnabledStatuses,
+) {
     let enabledRiskFactors = 0;
     let enabledRiskScoresSum = 0;
 
     if (riskFactors.carCrashFatalities) {
         const score = getCarCrashInjuryScore(countyData);
         if (score !== undefined) {
-            enabledRiskFactors++;
+            enabledRiskFactors += 1.5;
             enabledRiskScoresSum += score;
         }
     }

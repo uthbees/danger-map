@@ -90,64 +90,6 @@ export default function MapPage() {
                     <FormControlLabel
                         control={
                             <Checkbox
-                                checked={allCarCrashRisksEnabled}
-                                indeterminate={
-                                    !allCarCrashRisksEnabled &&
-                                    (riskFactors.carCrashFrequency ||
-                                        riskFactors.carCrashFatalities)
-                                }
-                                onChange={() => {
-                                    if (allCarCrashRisksEnabled) {
-                                        setRiskFactors((prevState) => ({
-                                            ...prevState,
-                                            carCrashFrequency: false,
-                                            carCrashFatalities: false,
-                                        }));
-                                    } else {
-                                        setRiskFactors((prevState) => ({
-                                            ...prevState,
-                                            carCrashFrequency: true,
-                                            carCrashFatalities: true,
-                                        }));
-                                    }
-                                }}
-                            />
-                        }
-                        label="Car crashes"
-                    />
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={riskFactors.carCrashFrequency}
-                                onChange={(e) =>
-                                    setRiskFactors((prevState) => ({
-                                        ...prevState,
-                                        carCrashFrequency: e.target.checked,
-                                    }))
-                                }
-                            />
-                        }
-                        label="Car crash frequency"
-                        className="indented"
-                    />
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={riskFactors.carCrashFatalities}
-                                onChange={(e) =>
-                                    setRiskFactors((prevState) => ({
-                                        ...prevState,
-                                        carCrashFatalities: e.target.checked,
-                                    }))
-                                }
-                            />
-                        }
-                        label="Injuries/fatalities from car crashes"
-                        className="indented"
-                    />
-                    <FormControlLabel
-                        control={
-                            <Checkbox
                                 checked={allCrimeRisksEnabled}
                                 indeterminate={
                                     !allCrimeRisksEnabled &&
@@ -309,6 +251,64 @@ export default function MapPage() {
                             />
                         }
                         label="Murders"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={allCarCrashRisksEnabled}
+                                indeterminate={
+                                    !allCarCrashRisksEnabled &&
+                                    (riskFactors.carCrashFrequency ||
+                                        riskFactors.carCrashFatalities)
+                                }
+                                onChange={() => {
+                                    if (allCarCrashRisksEnabled) {
+                                        setRiskFactors((prevState) => ({
+                                            ...prevState,
+                                            carCrashFrequency: false,
+                                            carCrashFatalities: false,
+                                        }));
+                                    } else {
+                                        setRiskFactors((prevState) => ({
+                                            ...prevState,
+                                            carCrashFrequency: true,
+                                            carCrashFatalities: true,
+                                        }));
+                                    }
+                                }}
+                            />
+                        }
+                        label="Car crashes"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.carCrashFrequency}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        carCrashFrequency: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Car crash frequency"
+                        className="indented"
+                    />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={riskFactors.carCrashFatalities}
+                                onChange={(e) =>
+                                    setRiskFactors((prevState) => ({
+                                        ...prevState,
+                                        carCrashFatalities: e.target.checked,
+                                    }))
+                                }
+                            />
+                        }
+                        label="Injuries/fatalities from car crashes"
                         className="indented"
                     />
                 </FormGroup>
