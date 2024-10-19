@@ -5,7 +5,7 @@ import MapPage from '../pages/MapPage';
 import HomePage from '../pages/HomePage';
 import HowItWorksPage from '../pages/WorksPage/HowItWorksPage';
 import AboutUsPage from '../pages/AboutUsPage';
-import LegalPage from '../pages/LegalPage';
+import LegalPage from '../pages/LegalPage/LegalPage';
 
 export default function App() {
     return <RouterProvider router={router} />;
