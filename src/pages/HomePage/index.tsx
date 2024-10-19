@@ -13,8 +13,15 @@ export default function HomePage() {
                     {' '}
                     {/* Box 3 */}
                     <p>
-                        Cheese, cheese, cheese, cheese. It should be
-                        center-aligned.
+                        Welcome to our danger level rating site! Using data
+                        analysis, we&apos;ve created a tool to measure and rate
+                        the safety of different areas across the USA. Whether
+                        you&apos;re planning a move or just curious, our site
+                        provides an easy way to explore the relative danger
+                        levels of various regions. <br></br> . . . . . . . . . .
+                        . . . . . . . . . . . . . . . . . . Dive in and discover
+                        more! . . . . . . . . . . . . . . . . . . . . . . . . .
+                        . .
                     </p>
                 </div>
             </section>
@@ -30,9 +37,14 @@ export default function HomePage() {
                 <div className="text-side">
                     {' '}
                     {/* Box 5, 6 */}
-                    <h2>Sub Header</h2>
-                    <div className="text-box">
-                        <p>Cheese-related text or description goes here.</p>
+                    <h2>Interactive Map</h2>
+                    <div className="texts-box">
+                        <p>
+                            Take a look at various US counties using advanced
+                            analysis techniques, combined with groundbreaking
+                            filters, and check to see what kind of danger might
+                            be lurking!
+                        </p>
                     </div>
                 </div>
             </section>
@@ -44,9 +56,13 @@ export default function HomePage() {
                 <div className="text-side">
                     {' '}
                     {/* Box 8, 9 */}
-                    <h2>Score Breakdown</h2>
-                    <div className="text-box">
-                        <p>Cheese breakdown description goes here.</p>
+                    <h2>How it Works</h2>
+                    <div className="texts-box">
+                        <p>
+                            Want to know how the ratings are determined or what
+                            information we are aggregating? Take a look here to
+                            find out about our pioneering rating technology!
+                        </p>
                     </div>
                 </div>
                 <Link to="/how-it-works" className="button">

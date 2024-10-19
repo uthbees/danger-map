@@ -28,6 +28,16 @@ body {
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center items vertically */
     align-items: center; /* Center items horizontally */
+    padding: 0 25%; /* Add padding on left and right to make text span only 50% */
+}
+
+.text-box {
+    width: 100%; /* Ensure text-box takes full width of the padded area */
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 }
 
 .section-2 {
@@ -61,9 +71,10 @@ h2 {
     text-align: left; /* Ensures text is left-aligned */
 }
 
-.text-box {
+.texts-box {
     text-align: left; /* Align text to the left for all sections except section 1 */
     font-size: 16px;
+    padding-right: 200px;
     color: #fff;
     margin: 10px 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
