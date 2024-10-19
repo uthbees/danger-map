@@ -1,5 +1,5 @@
 export default function getRiskScoreColor(riskScore: number | undefined) {
-    if (riskScore === undefined) {
+    if (riskScore === undefined || riskScore < 0) {
         return '#aaaaaa';
     }
 
@@ -21,11 +21,11 @@ export default function getRiskScoreColor(riskScore: number | undefined) {
         case 3:
             return '#ffeda0';
         case 2:
-            return '#ffffcc';
+            return '#ffffee';
         case 1:
         case 0:
-            return '#ffffff';
+            return '#ffffcc';
         default:
-            return '#aaaaaa';
+            return '#800026';
     }
 }
