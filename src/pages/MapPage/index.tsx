@@ -20,7 +20,7 @@ export default function MapPage() {
     const mapObj = useRef<L.Map>(null);
 
     useInitialSetup(() => {
-        mapObj.current = L.map('map').setView([37.8, -96], 4);
+        // mapObj.current = L.map('map').setView([37.8, -96], 4);
     });
 
     useEffect(() => {
