@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function AppHeader() {
     return (
         <div
@@ -9,7 +11,8 @@ export default function AppHeader() {
                 zIndex: 10,
             }}
         >
-            App header
+            <Link to="/">Home</Link>
+            <Link to="/map">Map</Link>
         </div>
     );
 }
