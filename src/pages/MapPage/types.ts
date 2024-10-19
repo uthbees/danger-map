@@ -5,3 +5,8 @@ export interface CountyData {
     TOTAL_FATALS: number; // Total fatalities/serious injuries from car crashes.
     TOTAL_INCIDENTS: number; // Total car crashes.
 }
+
+export interface RiskFactorEnabledStatuses {
+    carCrashFrequency: boolean;
+    carCrashFatalities: boolean;
+}

@@ -10,10 +10,10 @@ export default function AppHeader() {
             <Link className="nav-button" to="/map">
                 Map
             </Link>
-            <Link className="nav-button" to="/hiwp">
+            <Link className="nav-button" to="/how-it-works">
                 How it Works
             </Link>
-            <Link className="nav-button" to="/aboutus">
+            <Link className="nav-button" to="/about-us">
                 About Us
             </Link>
             <Link className="nav-button" to="/legal">

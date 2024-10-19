@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './HomePage.css'; // Ensure this file is correctly linked to the component
+import './index.css'; // Ensure this file is correctly linked to the component
 
 export default function HomePage() {
     return (
@@ -49,7 +49,7 @@ export default function HomePage() {
                         <p>Cheese breakdown description goes here.</p>
                     </div>
                 </div>
-                <Link to="/hiwp" className="button">
+                <Link to="/how-it-works" className="button">
                     How it Works
                 </Link>{' '}
                 {/* Box 10 */}
