@@ -1,4 +1,4 @@
-import './leaflet.css';
+import './map.css';
 import { Paper, Stack } from '@mui/material';
 import counties from './counties.json';
 import useInitialSetup from '../../utils/useInitialSetup';
