@@ -35,7 +35,7 @@ export default function buildCountiesLayer(
             // Attach a popup with county information
             if (feature.properties && feature.properties.NAME) {
                 layer.bindPopup(
-                    `${feature.properties.NAME} county<br/>${feature.properties.GEOID}`,
+                    `${feature.properties.NAME} County<br/>${feature.properties.GEOID}`,
                 );
             }
         },

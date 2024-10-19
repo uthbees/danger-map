@@ -1,5 +1,6 @@
-import { CountyData } from '../types';
+import { CountyCarData, CountyCrimeData, CountyData } from '../types';
 import counties_car_data from '../../../counties_car_data.json';
+import counties_crime_data from '../../../counties_crime_data.json';
 export default function getCountyData(
     countyName: string,
     stateCode: string,
@@ -14,11 +15,38 @@ export default function getCountyData(
     const lowercaseCountyName = countyName.toLowerCase();
     const lowercaseStateName = stateName.toLowerCase();
 
-    return counties_car_data.find(
-        (countyData: CountyData) =>
+    const countyCarData = counties_car_data.find(
+        (countyData: CountyCarData) =>
             countyData.COUNTYNAME.toLowerCase() === lowercaseCountyName &&
             countyData.STATENAME.toLowerCase() === lowercaseStateName,
     );
+
+    if (countyCarData === undefined) {
+        return undefined;
+    }
+
+    const countyCrimeData: CountyCrimeData | undefined =
+        counties_crime_data.find(
+            (countyData: CountyCrimeData) =>
+                countyData.county.toLowerCase() === lowercaseCountyName &&
+                countyData.state_name.toLowerCase() === lowercaseStateName,
+        );
+
+    return {
+        countyName,
+        stateName,
+        population: countyCarData.POPULATION,
+        carCrashes: countyCarData.TOTAL_INCIDENTS,
+        carCrashHospitalizations: countyCarData.FATALS,
+        robberies: countyCrimeData?.robbery,
+        larcenies: countyCrimeData?.larceny,
+        burglaries: countyCrimeData?.burglary,
+        mvthefts: countyCrimeData?.mvtheft,
+        assaults: countyCrimeData?.assault,
+        arson: countyCrimeData?.arson,
+        rapes: countyCrimeData?.rape,
+        murders: countyCrimeData?.murder,
+    };
 }
 
 // https://www.bls.gov/respondents/mwr/electronic-data-interchange/appendix-d-usps-state-abbreviations-and-fips-codes.htm
